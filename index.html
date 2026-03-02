@@ -68,7 +68,23 @@
     <button id="leadBtn">Submit</button>
     <script>
       document.getElementById('addToWishlistButton')?.addEventListener('click', function () {
-        fbq('track', 'Lead');
+           // Get the values from the form
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            if (!name || !email) {
+                alert('Please enter both your name and email.');
+                return;
+            }
+            fbq('track', 'Lead', 
+                content_name: 'Test Product',
+                content_category: 'Example Category',
+                content_ids: ['1234'],
+                content_type: 'product',
+                value: 50.00,
+                currency: 'USD',
+                user_name: name
+            });
       });
     </script>
 </body>
