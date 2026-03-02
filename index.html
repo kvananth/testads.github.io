@@ -65,5 +65,11 @@
             });
         });
     </script>
+    <button id="leadBtn">Submit</button>
+    <script>
+      document.getElementById('addToWishlistButton')?.addEventListener('click', function () {
+        fbq('track', 'Lead');
+      });
+    </script>
 </body>
 </html>
